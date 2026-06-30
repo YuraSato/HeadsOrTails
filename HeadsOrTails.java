@@ -1,33 +1,34 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class HeadsOrTails {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         Random randomizer = new Random();
 
+        System.out.println("Who are you?");
+        System.out.print("> ");
+        String playerName = input.nextLine();
+
+        System.out.println("Hello, " + playerName + "!");
         System.out.println("Tossing a coin ...");
 
-        int countHeads = 0;
-        int countTails = 0;
+        int headTotal = 0;
+        int tailTotal = 0;
 
-        for (int round = 1; round <= 3; round++) {
+        for (int turn = 1; turn <= 3; turn++) {
             boolean flip = randomizer.nextBoolean();
-            String outcome = flip ? "Heads" : "Tails";
+            String result = flip ? "Heads" : "Tails";
 
-            System.out.println("Round " + round + ": " + outcome);
+            System.out.println("Round " + turn + ": " + result);
 
             if (flip) {
-                countHeads++;
+                headTotal++;
             } else {
-                countTails++;
+                tailTotal++;
             }
         }
 
-        System.out.println("Heads: " + countHeads + ", Tails: " + countTails);
-
-        if (countHeads > countTails) {
-            System.out.println("You won");
-        } else {
-            System.out.println("You lost");
-        }
+        System.out.println("Heads: " + headTotal + ", Tails: " + tailTotal);
     }
 }
