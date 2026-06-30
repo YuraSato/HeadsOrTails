@@ -32,3 +32,4 @@ public class HeadsOrTails {
         System.out.println("Heads: " + headTotal + ", Tails: " + tailTotal);
     }
 }
+
